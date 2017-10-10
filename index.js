@@ -38,11 +38,18 @@ function total() {
 }
 
 function removeFromCart(item) {
-  delete cart.itemName;
+  if(!cart.hasOwnProperty(item)){
+    console.log("That item is not in your cart.");
+    return cart;
+  }
+  else{
+    delete cart[item];
+    return cart;
+  }
 }
 
 function placeOrder(cardNumber) {
-  if ( cardNumber == undefined){
+  if ( !cardNumber){
     console.log("Sorry, we don't have a credit card on file for you.");
   }
   else{
