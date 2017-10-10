@@ -16,7 +16,7 @@ function addToCart(item) {
   console.log(`${newItem.itemName} has been added to your cart.`);
   cart.push(newItem);
   return cart;
-
+}
 function viewCart() {
     if(cart.length ===0){
       console.log("Your shopping cart is empty.");
